@@ -1,3 +1,5 @@
 spring:
   application:
     name: Gateway
+server:
+  port: 9090
