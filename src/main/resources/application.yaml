@@ -3,5 +3,14 @@ spring:
     name: Gateway
   config:
     import: configserver:http://localhost:8082
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: PRODUCT-SERVICE
+              uri: http://localhost:8083
+              predicates:
+                - Path=/product/**
 server:
   port: 9090
