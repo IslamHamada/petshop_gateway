@@ -16,6 +16,10 @@ spring:
               uri: http://localhost:8086
               predicates:
                   - Path=/cart/**
+            - id: USER-SERVICE
+              uri: http://localhost:8085
+              predicates:
+                  - Path=/user/**
   security:
     oauth2:
       client:
