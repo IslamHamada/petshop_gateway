@@ -22,21 +22,9 @@ spring:
                   - Path=/user/**
   security:
     oauth2:
-      client:
-        registration:
-          auth0:
-            client-id: FMTmyZz6yhjSw1pDIhVjYnSV0vG5BZN2
-            client-secret: M-iB-LUl6yVgtJCM14LnhWDkNWJ3gZv74JLZwQ99yZ9XYsrA6viYinSqBY53xOAW
-            scope: openid, email, profile, offline_access, Customer, Admin
-            authorization-grant-type: authorization_code
-            redirect-uri: "http://localhost:9090/login/oauth2/code/auth0"
-        provider:
-          auth0:
-            issuer-uri: https://dev-atfpp36qj24tzo8l.us.auth0.com/
-            jwk-set-uri: https://dev-atfpp36qj24tzo8l.us.auth0.com/.well-known/jwks.json
-
-auth0:
-  audience: http://random/api
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-atfpp36qj24tzo8l.us.auth0.com/
 
 server:
   port: 9090
