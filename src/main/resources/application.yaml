@@ -1,3 +1,6 @@
+my:
+  url: ${ROUTING_URL:localhost}
+
 spring:
   application:
     name: Gateway
@@ -9,23 +12,23 @@ spring:
         webmvc:
           routes:
             - id: PRODUCT-SERVICE
-              uri: http://localhost:8083
+              uri: http://${my.url}:8083
               predicates:
                 - Path=/product/**
             - id: CART-SERVICE
-              uri: http://localhost:8086
+              uri: http://${my.url}:8086
               predicates:
                   - Path=/cart/**
             - id: USER-SERVICE
-              uri: http://localhost:8085
+              uri: http://${my.url}:8085
               predicates:
                   - Path=/user/**
             - id: CART-SERVICE
-              uri: http://localhost:8086
+              uri: http://${my.url}:8086
               predicates:
                   - Path=/cart/**
             - id: ORDER-SERVICE
-              uri: http://localhost:8084
+              uri: http://${my.url}:8084
               predicates:
                   - Path=/order/**
   security:
