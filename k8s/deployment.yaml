@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-app
+spec:
+  selector:
+    matchLabels:
+      app: gateway-app
+  template:
+    metadata:
+      labels:
+        app: gateway-app
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: gateway
+          image: islamhamada/petshop:Gateway
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9090
+          env:
+            - name: EUREKA_SERVER_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: eureka_server_url
+                  name: eureka-cm
+            - name: CONFIG_SERVER_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: config_server_url
+                  name: config-cm
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: gateway-app
+  ports:
+    - port: 80
+      targetPort: 9090
