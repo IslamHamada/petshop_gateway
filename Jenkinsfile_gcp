@@ -24,5 +24,6 @@ node {
             manifestPattern: 'k8s/deployment.yaml',
             credentialsId: env.PROJECT_ID,
             verifyDeployments: true])
+        sh("kubectl rollout restart deployment gateway")
     }
 }
