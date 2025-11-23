@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Gateway
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_URL:localhost:8082}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-atfpp36qj24tzo8l.us.auth0.com/
+eureka:
+  client:
+    enabled: false
