@@ -12,23 +12,23 @@ spring:
         webmvc:
           routes:
             - id: PRODUCT-SERVICE
-              uri: http://${my.url}:8083
+              uri: http://product-service-svc
               predicates:
                 - Path=/product/**
             - id: CART-SERVICE
-              uri: http://${my.url}:8086
+              uri: http://cart-service-svc
               predicates:
                   - Path=/cart/**
             - id: USER-SERVICE
-              uri: http://${my.url}:8085
+              uri: http://user-service-svc
               predicates:
                   - Path=/user/**
             - id: CART-SERVICE
-              uri: http://${my.url}:8086
+              uri: http://cart-service-svc
               predicates:
                   - Path=/cart/**
             - id: ORDER-SERVICE
-              uri: http://${my.url}:8084
+              uri: http://order-service-svc
               predicates:
                   - Path=/order/**
   security:
