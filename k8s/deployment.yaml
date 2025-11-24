@@ -15,7 +15,7 @@ spec:
         - name: dockerhub-secret
       containers:
         - name: gateway
-          image: IMAGE_URL/gateway
+          image: IMAGE_URL/gateway:TAG
           imagePullPolicy: Always
           ports:
             - containerPort: 9090

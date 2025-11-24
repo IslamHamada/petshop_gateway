@@ -88,7 +88,7 @@
                     </from>
                     <to>
                         <image>${REPO_URL}/gateway</image>
-                        <tags>${project.version}</tags>
+                        <tags>${VERSION}</tags>
                     </to>
                 </configuration>
             </plugin>
