@@ -23,6 +23,12 @@ spec:
               port: 9090
             initialDelaySeconds: 5
             periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9090
+            initialDelaySeconds: 5
+            periodSeconds: 5
           env:
             - name: EUREKA_SERVER_URL
               valueFrom:
@@ -71,6 +77,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: config-server-svc
+                name: gateway-svc
                 port:
                   number: 80
