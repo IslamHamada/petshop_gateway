@@ -16,10 +16,6 @@ spring:
               uri: http://product-service-svc
               predicates:
                 - Path=/product/**
-            - id: CART-SERVICE
-              uri: http://cart-service-svc
-              predicates:
-                  - Path=/cart/**
             - id: USER-SERVICE
               uri: http://user-service-svc
               predicates:
