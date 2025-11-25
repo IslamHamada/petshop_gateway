@@ -71,6 +71,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: gateway-svc
+                name: config-server-svc
                 port:
                   number: 80
