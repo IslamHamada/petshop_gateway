@@ -19,6 +19,12 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9090
+            initialDelaySeconds: 5
+            periodSeconds: 5
           env:
             - name: EUREKA_SERVER_URL
               valueFrom:
