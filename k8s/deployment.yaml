@@ -37,7 +37,7 @@ kind: Service
 metadata:
   name: gateway-svc
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: gateway-app
   ports:
