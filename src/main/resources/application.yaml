@@ -1,6 +1,6 @@
 my:
   frontend:
-    url: ${FRONTEND_URL:localhost:8090}
+    url: ${FRONTEND_URL:http://localhost:8090}
 
 spring:
   application:
