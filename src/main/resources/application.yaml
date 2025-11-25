@@ -1,5 +1,6 @@
 my:
-  url: ${ROUTING_URL:localhost}
+  frontend:
+    url: ${FRONTEND_URL:localhost:8090}
 
 spring:
   application:
