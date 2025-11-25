@@ -30,6 +30,11 @@ spec:
                 configMapKeyRef:
                   key: config_server_url
                   name: config-cm
+            - name: FRONTEND_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: frontend_url
+                  name: frontend-cm
 
 ---
 apiVersion: v1
