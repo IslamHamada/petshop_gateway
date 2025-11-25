@@ -11,8 +11,6 @@ spec:
       labels:
         app: gateway-app
     spec:
-      imagePullSecrets:
-        - name: dockerhub-secret
       containers:
         - name: gateway
           image: IMAGE_URL/gateway:TAG
