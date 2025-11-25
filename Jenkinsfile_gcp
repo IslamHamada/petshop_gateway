@@ -26,7 +26,6 @@ node {
             manifestPattern: 'k8s/deployment.yaml',
             credentialsId: env.PROJECT_ID,
             verifyDeployments: true])
-        sh("sed -i 's|VERSION|${version}|g' k8s/cert.yaml")
         step([$class: 'KubernetesEngineBuilder',
               projectId: env.PROJECT_ID,
               clusterName: env.CLUSTER,

@@ -5,25 +5,3 @@ metadata:
 spec:
   domains:
     - 34.54.212.8.sslip.io
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: gateway-ingress
-  annotations:
-    kubernetes.io/ingress.class: gce
-    networking.gke.io/managed-certificates: gateway-cert
-    version: VERSION
-spec:
-  rules:
-    - host: 34.54.212.8.sslip.io
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: gateway-svc
-                port:
-                  number: 80
