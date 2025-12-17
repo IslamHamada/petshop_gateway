@@ -17,9 +17,10 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
