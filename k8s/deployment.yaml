@@ -21,6 +21,18 @@ spec:
             limits:
               cpu: "50m"
               memory: "512Mi"
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9090
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9090
+            initialDelaySeconds: 5
+            periodSeconds: 5
           env:
             - name: EUREKA_SERVER_URL
               valueFrom:
