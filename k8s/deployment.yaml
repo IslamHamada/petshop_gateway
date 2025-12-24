@@ -37,7 +37,7 @@ spec:
             httpGet:
               path: /actuator/health/liveness
               port: 9090
-            failureThreshold: 60
+            failureThreshold: 90
             periodSeconds: 5
           env:
             - name: EUREKA_SERVER_URL
