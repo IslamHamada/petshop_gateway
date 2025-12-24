@@ -33,6 +33,12 @@ spec:
               port: 9090
             initialDelaySeconds: 5
             periodSeconds: 5
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9090
+            failureThreshold: 30
+            periodSeconds: 5
           env:
             - name: EUREKA_SERVER_URL
               valueFrom:
