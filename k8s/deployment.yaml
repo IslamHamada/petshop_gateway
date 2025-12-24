@@ -55,6 +55,11 @@ spec:
                 configMapKeyRef:
                   key: frontend_url
                   name: frontend-cm
+            - name: ZIPKIN_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: zipkin_url
+                  name: zipkin-cm
 
 ---
 apiVersion: v1
