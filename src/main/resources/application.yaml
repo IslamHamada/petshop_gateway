@@ -28,6 +28,10 @@ spring:
               uri: http://order-service-svc
               predicates:
                   - Path=/order/**
+            - id: REVIEW-SERVICE
+              uri: http://${my.url}:8087
+              predicates:
+                - Path=/review/**
   security:
     oauth2:
       resourceserver:
