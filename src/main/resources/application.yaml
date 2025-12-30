@@ -31,6 +31,10 @@ spring:
               uri: http://${my.url}:8084
               predicates:
                   - Path=/order/**
+            - id: REVIEW-SERVICE
+              uri: http://${my.url}:8087
+              predicates:
+                - Path=/review/**
   security:
     oauth2:
       resourceserver:
