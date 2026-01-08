@@ -80,12 +80,16 @@ kind: Ingress
 metadata:
   name: gateway-ingress
   annotations:
-    kubernetes.io/ingress.class: gce
-    networking.gke.io/managed-certificates: gateway-cert
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     version: "TAG"
 spec:
+  tls:
+    - hosts:
+      - gateway.94.130.54.145.sslip.io
+      secretName: gateway-tls-secret
   rules:
-    - host: 34.54.212.8.sslip.io
+    - host: gateway.94.130.54.145.sslip.io
       http:
         paths:
           - path: /
