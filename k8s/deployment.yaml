@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: IMAGE_URL/gateway:TAG
+          image: IMAGE_URL:TAG
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
