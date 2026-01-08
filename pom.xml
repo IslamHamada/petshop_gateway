@@ -91,7 +91,7 @@
                         <image>eclipse-temurin:17-jdk</image>
                     </from>
                     <to>
-                        <image>${REPO_URL}/gateway</image>
+                        <image>${REPO_URL}:gateway</image>
                         <tags>${VERSION}</tags>
                     </to>
                 </configuration>
