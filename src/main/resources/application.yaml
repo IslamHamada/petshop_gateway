@@ -29,7 +29,7 @@ spring:
               predicates:
                   - Path=/order/**
             - id: REVIEW-SERVICE
-              uri: http://${my.url}:8087
+              uri: http://review-service-svc
               predicates:
                 - Path=/review/**
   security:
