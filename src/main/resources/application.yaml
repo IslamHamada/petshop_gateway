@@ -15,26 +15,47 @@ spring:
               uri: http://${my.url}:8083
               predicates:
                 - Path=/product/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: PRODUCT-SERVICE
+                    fallbackUri: forward:/productServiceFallback
             - id: CART-SERVICE
               uri: http://${my.url}:8086
               predicates:
                   - Path=/cart/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: CART-SERVICE
+                    fallbackUri: forward:/cartServiceFallback
             - id: USER-SERVICE
               uri: http://${my.url}:8085
               predicates:
                   - Path=/user/**
-            - id: CART-SERVICE
-              uri: http://${my.url}:8086
-              predicates:
-                  - Path=/cart/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: USER-SERVICE
+                    fallbackUri: forward:/userServiceFallback
             - id: ORDER-SERVICE
               uri: http://${my.url}:8084
               predicates:
                   - Path=/order/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: ORDER-SERVICE
+                    fallbackUri: forward:/orderServiceFallback
             - id: REVIEW-SERVICE
               uri: http://${my.url}:8087
               predicates:
                 - Path=/review/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: REVIEW-SERVICE
+                    fallbackUri: forward:/reviewServiceFallback
   security:
     oauth2:
       resourceserver:
