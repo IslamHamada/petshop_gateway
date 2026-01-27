@@ -22,7 +22,7 @@ spring:
                     id: PRODUCT-SERVICE
                     fallbackUri: forward:/productServiceFallback
             - id: CART-SERVICE
-              uri: http://${my.url}:8086
+              uri: http://cart-service-svc
               predicates:
                   - Path=/cart/**
               filters:
