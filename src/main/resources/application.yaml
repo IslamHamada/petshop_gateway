@@ -56,6 +56,15 @@ spring:
                   args:
                     id: REVIEW-SERVICE
                     fallbackUri: forward:/reviewServiceFallback
+            - id: NOTIFICATION-SERVICE
+              uri: http://${my.url}:8088
+              predicates:
+                - Path=/notifications/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    id: NOTIFICATION-SERVICE
+                    fallbackUri: forward:/notificationServiceFallback
   security:
     oauth2:
       resourceserver:
